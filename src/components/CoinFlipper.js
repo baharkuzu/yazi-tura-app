@@ -16,7 +16,9 @@ class CoinFlipper extends Component {
         this.state = {
             currentStatus: options[0],
             gelenler: [],
-            donuyor: false
+            donuyor: false,
+            yaziCount: 0,
+            turaCount:0
         }
     }
 
@@ -46,6 +48,15 @@ class CoinFlipper extends Component {
                 {
                     gelenler.length > 0 && !donuyor && <h3>{currentStatus} geldi</h3>
                 }
+                <h3>
+                    Yazı sayısı: {gelenler.filter(item => {return item === "yazi"}).length}
+                </h3>
+                    
+                <h3>
+                    Tura sayısı: {gelenler.filter(item => {return item === "tura"}).length}
+                </h3>
+
+                <h3>Toplam atış sayısı: {gelenler.length}</h3>
             </div>
         );
     }
